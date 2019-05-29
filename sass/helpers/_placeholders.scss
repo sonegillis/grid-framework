@@ -1,13 +1,23 @@
 @import "variables";
 
 %grid-item{
-  margin-right: #{$gutter_size};
-  float: left;
-  background-color: blue;
-  height: 50px;
+  & [class^="col-"] {
+    float: left;
+    background-color: blue;
+    height: 50px;
+  }
   @media (max-width: 400px) {
     float: none;
   }
+  // &.gutter_size [class^="col-"] {
+  //   margin-right: #{$gutter_size};
+  // }
+  // &.gutter_size_md [class^="col-"] {
+  //   margin-right: #{$gutter_size_md};
+  // }
+  // &.gutter_size_lg [class^="col-"] {
+  //   margin-right: #{$gutter_size_lg};
+  // }
 }
 
 %clearfix{

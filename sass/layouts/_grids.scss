@@ -5,11 +5,24 @@
 
 
 @for $i from 1 to $count_cols{
-    .col-#{$i}{
+    .row {
       @extend %grid-item;
-      width: calc(#{$i}/12 * 100% - #{$gutter_size});
-      @media (max-width: $breakpoint_small){
-        width: 100%;
+      .col-#{$i}{
+        @media (max-width: $breakpoint_small){
+          width: 100%;
+        }
+      }
+      &.gutter_size .col-#{$i}{
+        width: calc(#{$i}/12 * 100% - #{$gutter_size});
+        margin-right: #{$gutter_size};
+      }
+      &.gutter_size_md .col-#{$i}{
+        width: calc(#{$i}/12 * 100% - #{$gutter_size_md});
+        margin-right: #{$gutter_size_md};
+      }
+      &.gutter_size_lg .col-#{$i}{
+        width: calc(#{$i}/12 * 100% - #{$gutter_size_lg});
+        margin-right: #{$gutter_size_lg};
       }
     }
 }
