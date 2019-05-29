@@ -1,0 +1,8 @@
+@import "variables";
+
+%grid-item{
+  margin-right: #{$gutter_size};
+  float: left;
+  background-color: blue;
+  height: 50px;
+}
