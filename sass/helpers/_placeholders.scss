@@ -5,4 +5,15 @@
   float: left;
   background-color: blue;
   height: 50px;
+  @media (max-width: 400px) {
+    float: none;
+  }
+}
+
+%clearfix{
+  &::after{
+    display: table;
+    content: '';
+    clear: both;
+  }
 }

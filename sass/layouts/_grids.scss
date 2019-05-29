@@ -1,20 +1,15 @@
 @import "../components/container";
+@import "../components/row";
 @import "../helpers/variables";
 @import "../helpers/placeholders";
+
 
 @for $i from 1 to $count_cols{
     .col-#{$i}{
       @extend %grid-item;
       width: calc(#{$i}/12 * 100% - #{$gutter_size});
+      @media (max-width: $breakpoint_small){
+        width: 100%;
+      }
     }
-}
-.row{
-  width: 100%;
-  height: 100%;
-  background-color: black;
-}
-.row [class^="col-"]:last-child{
-  float: right;
-  margin-right: 0;
-  background: red;
 }
