@@ -1,0 +1,28 @@
+@import "../components/container";
+@import "../components/row";
+@import "../helpers/variables";
+@import "../helpers/placeholders";
+
+
+@for $i from 1 to $count_cols{
+    .row {
+      @extend %grid-item;
+      .col-#{$i}{
+        @media (max-width: $breakpoint_small){
+          width: 100%;
+        }
+      }
+      &.gutter_size .col-#{$i}{
+        width: calc(#{$i}/12 * 100% - #{$gutter_size});
+        margin-right: #{$gutter_size};
+      }
+      &.gutter_size_md .col-#{$i}{
+        width: calc(#{$i}/12 * 100% - #{$gutter_size_md});
+        margin-right: #{$gutter_size_md};
+      }
+      &.gutter_size_lg .col-#{$i}{
+        width: calc(#{$i}/12 * 100% - #{$gutter_size_lg});
+        margin-right: #{$gutter_size_lg};
+      }
+    }
+}
